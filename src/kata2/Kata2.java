@@ -11,13 +11,10 @@ public class Kata2 {
         int[] data;
         data = new int[] {1, 3, 5, -1, 3, -5, 1, -3, -5, 1, 2, 3, 4, 5, 1};
         
-        for (int i = 0; i < data.length; i++) {
-            if(histogram.containsKey(data[i])){
-                histogram.put(data[i], histogram.get(data[i])+1);
-            }else {
-                histogram.put(data[i], 1);
-            }
+        for (int i : data) {
+            histogram.put(i,histogram.containsKey(i) ? histogram.get(i)+ 1 : 1);
         }
+
         histogram.entrySet().forEach((entry) -> {
             System.out.println(entry.getKey() + " ==> " + entry.getValue());
         });
