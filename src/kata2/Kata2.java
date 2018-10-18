@@ -6,17 +6,13 @@ public class Kata2 {
 
     public static void main(String[] args) {
         
-        Integer[] data = {1, 3, 5, -1, 3, -5, 1, -3, -5, 1, 2, 3, 4, 5, 1};
+        String[] data = {"Ana", "María", "Pepe", "María", "Juan", "Juan", "María"};
         
         Histogram histo = new Histogram(data);
         
-        Map<Integer, Integer> histogr = histo.getHistogram();
+        Map<String, Integer> histogr = histo.getHistogram();
         
-//        for(Map.Entry<Integer, Integer> entry : histogr.entrySet()){
-//            System.out.println(entry.getKey() + " ==> " + entry.getValue());
-//        }
-        
-        for (Integer key : histogr.keySet()) {
+        for (String key : histogr.keySet()) {
             System.out.println(key + " ==> " + histogr.get(key));            
         }
     }
